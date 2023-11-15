@@ -3,6 +3,8 @@
     "bootstrap": "^5.3.2"
   },
   "devDependencies": {
+    "eslint": "^8.53.0",
+    "prettier": "^3.1.0",
     "sass": "^1.69.5"
   },
   "name": "semesterproject2",
