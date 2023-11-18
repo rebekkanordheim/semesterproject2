@@ -13,36 +13,34 @@
     <title>Paw Bids | Home</title>
 </head>
 <body>
-    <header>
         <nav>
             <a href="/index.html">
                 <img class="pawbidslogo" src="/images/pawbids-dark.png">
             </a>
+            <button type=button class="btn btn-outline-success me-2">
+                Buy
+            </button>
+            <button type=button class="btn btn-outline-success me-2">
+                Sell
+            </button>
             <form class="col mb-3 mb-sm-0 me-sm-3" role="search">
-                <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+                <input type="search" class="form-control" placeholder="Search" aria-label="Search">
             </form>
             <div class="text-end">
-                <button type="button" class="btn btn-outline-warning me-2" data-auth="logout" data-visible="loggedIn">
+                <!-- <button type="button" class="btn btn-outline-warning me-2" data-auth="logout" data-visible="loggedIn">
                   Logout
-                </button>
+                </button> -->
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#registerModal" data-auth="register" data-visible="loggedOut">
+                    Create Profile
+                  </button>
                 <button type="button" class="btn btn-outline-success me-2" data-bs-toggle="modal" data-bs-target="#loginModal" data-auth="login" data-visible="loggedOut">
                   Login
                 </button>
-                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#registerModal" data-auth="register" data-visible="loggedOut">
-                  Create Profile
-                </button>
               </div>
         </nav>
-    </header>
     <main>
         <div class="body-wrapper">
             <h1>Hello Paws!</h1>
-            <p>
-            Welcome to PawBids, where canine style meets exciting auctions! Explore our curated collection of trendy dog accessories, from stylish collars to cozy beds. Join the thrill of bidding and treat your furry friend to the best in pet fashion and innovation.
-            <br>
-            <br>
-            PawBids – where every bid brings joy to your dog's world!
-            </p>
         </div>
     </main>
     <footer>
