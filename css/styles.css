@@ -21,6 +21,8 @@ p {
 
 body {
     margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 footer {
@@ -29,9 +31,8 @@ footer {
     padding-right: 20px;
 }
 
-
 .body-wrapper {
-    padding: 20px;
+    /*     padding: 20px; */
     margin: 0;
     background-color: #004643;
 }
@@ -40,4 +41,29 @@ footer {
     width: 120px;
     position: relative;
     bottom: 0;
+}
+
+.image-container {
+    position: relative;
+    display: inline-block;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.this {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.overlay-text {
+    position: relative;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 30px;
+    text-align: center;
 }
