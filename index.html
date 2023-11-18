@@ -7,10 +7,57 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Montserrat:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <title>Paw Bids | Home</title>
 </head>
 <body>
-    <h1>Hello Paws!</h1>
-    <p>Welcome to PawBids, where canine style meets exciting auctions! Explore our curated collection of trendy dog accessories, from stylish collars to cozy beds. Join the thrill of bidding and treat your furry friend to the best in pet fashion and innovation. PawBids – where every bid brings joy to your dog's world.</p>
+    <header>
+        <nav>
+            <a href="/index.html">
+                <img class="pawbidslogo" src="/images/pawbids-dark.png">
+            </a>
+            <form class="col mb-3 mb-sm-0 me-sm-3" role="search">
+                <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
+            </form>
+            <div class="text-end">
+                <button type="button" class="btn btn-outline-warning me-2" data-auth="logout" data-visible="loggedIn">
+                  Logout
+                </button>
+                <button type="button" class="btn btn-outline-success me-2" data-bs-toggle="modal" data-bs-target="#loginModal" data-auth="login" data-visible="loggedOut">
+                  Login
+                </button>
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#registerModal" data-auth="register" data-visible="loggedOut">
+                  Create Profile
+                </button>
+              </div>
+        </nav>
+    </header>
+    <main>
+        <div class="body-wrapper">
+            <h1>Hello Paws!</h1>
+            <p>
+            Welcome to PawBids, where canine style meets exciting auctions! Explore our curated collection of trendy dog accessories, from stylish collars to cozy beds. Join the thrill of bidding and treat your furry friend to the best in pet fashion and innovation.
+            <br>
+            <br>
+            PawBids – where every bid brings joy to your dog's world!
+            </p>
+        </div>
+    </main>
+    <footer>
+        <div class="col">
+            <p>© 2023 Rebekka Nordheim</p>
+        </div>
+        <div id="footerActions">
+            <a href="./?view=post" data-visible="loggedIn" class="btn btn-outline-success">New Post</a>
+          </div>
+    </footer>
+    <footer>
+            <div class="col-auto" data-visible="loggedIn">
+            </div>
+          </div>
+        </div>
+      </footer>
 </body>
 </html>
