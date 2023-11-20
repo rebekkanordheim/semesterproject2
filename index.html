@@ -52,30 +52,35 @@
                   <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search"/>
                 </form>
                 <div class="text-end">
-                  <button type="button" class="actionButtonTwo" data-bs-toggle="modal" data-bs-target="#registerModal" data-auth="register" data-visible="loggedOut"
-                  >Create Profile
+                  <button type="button" class="actionButtonTwo" data-bs-toggle="modal" data-bs-target="#registerModal" data-auth="register" data-visible="loggedOut">
+                    Create Profile
                   </button>
-                  <button type="button" class="actionButtonOne" data-bs-toggle="modal" data-bs-target="#loginModal" data-auth="login" data-visible="loggedOut"
-                  > Login </button>
-                  <button type="button" class="actionButtonTwo" data-auth="logout" data-visible="loggedIn"
-                  > Logout </button>
+                  <!-- ENDRE FARGE OG TYPEN KNAPP (SKJER IKKE NOE ENDA) -->
+                  <button type="button" class="btn btn-outline-success me-2" data-bs-toggle="modal" data-bs-target="#loginModal" data-auth="login" data-visible="loggedOut">
+                    Login
+                </button>
+                  <!-- ENDRE FARGE OG TYPEN KNAPP (SKJER IKKE NOE ENDA) -->
+                  <button type="button" class="actionButtonTwo btn btn-outline-warning me-2" data-auth="logout" data-visible="loggedIn"
+            >
+              Logout
+            </button>
                 </div>
               </div>
             </div>
           </nav>
     </header>
-    <main class="flex-grow-1 container-fluid mt-3">
+    <main>
         <div class="body-wrapper">
-            <div class="image-container">
-                <img class="this" src="/images/photo-1523480717984-24cba35ae1ef.png">
-                <div class="overlay-text">
-                    <h1>Hello Paws!</h1>
-                    <p>Welcome to PawBids:
-                    <br>Where Tails Wag and Bids Blossom!</p>
-                </div>
+            <img class="this" src="/images/photo-1523480717984-24cba35ae1ef.png">
+            <div class="overlay-text">
+                <h1>Hello Paws!</h1>
+                <p>Welcome to PawBids:
+                <br>Where Tails Wag and Bids Blossom!</p>
             </div>
             <div>
-                <h1>Hello Paws!</h1>
+                <div>
+                    <h1>Hello Paws!</h1>
+                </div>
             </div>
         </div>
     </main>
@@ -87,91 +92,41 @@
             <a href="./?view=post" data-visible="loggedIn" class="btn btn-outline-success">New Post</a>
           </div>
     </footer>
-    <div
-      class="modal fade"
-      id="registerModal"
-      data-bs-backdrop="static"
-      data-bs-keyboard="false"
-      tabindex="-1"
-      aria-labelledby="registerModalLabel"
-      aria-hidden="true"
-     >
+    <div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
       <div
-        class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable"
-      >
+        class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <!-- REGISTER FORM -->
         <form class="modal-content" id="registerForm">
           <div class="modal-header">
             <h5 class="modal-title" id="registerModalLabel">Create Profile</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <div class="form-floating mb-3">
-              <input
-                required
-                type="text"
-                class="form-control"
-                id="registerName"
-                name="name"
-                placeholder="name@example.com"
-              />
+              <input required type="text" class="form-control" id="registerName" name="name" placeholder="name@example.com"/>
               <label for="registerName">Name</label>
             </div>
             <div class="form-floating mb-3">
-              <input
-                required
-                type="email"
-                class="form-control"
-                id="registerEmail"
-                name="email"
-                pattern="[\w\-.]+@(stud.)?noroff.no$"
-                title="Only Noroff student or teacher emails are valid."
-                placeholder="name@example.com"
-              />
+                <input required type="email" class="form-control" id="registerEmail" name="email" pattern="[\w\-.]+@stud\.noroff\.no$" title="Please use a valid Noroff student email address (e.g., name@stud.noroff.no)" placeholder="name@stud.noroff.no" />
               <label for="registerEmail">Email address</label>
             </div>
             <div class="form-floating mb-3">
-              <input
-                required
-                type="password"
-                minlength="8"
-                class="form-control"
-                id="registerPassword"
-                name="password"
-                placeholder="Password"
+              <input required type="password" minlength="8" class="form-control" id="registerPassword" name="password" placeholder="Password"
               />
               <label for="registerPassword">Password</label>
             </div>
             <div class="form-floating">
-              <input
-                type="url"
-                class="form-control"
-                id="registerAvatar"
-                name="avatar"
-                placeholder="Avatar URL"
+              <input type="url" class="form-control" id="registerAvatar" name="avatar" placeholder="Avatar URL"
               />
               <label for="registerAvatar">Avatar URL</label>
             </div>
           </div>
           <div class="modal-footer">
-            <button
-              type="reset"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
+            <button type="reset" class="btn btn-secondary" data-bs-dismiss="modal"
             >
               Close
             </button>
-            <button
-              type="button"
-              class="btn btn-outline-success"
-              data-bs-toggle="modal"
-              data-bs-target="#loginModal"
-              data-auth="login"
-              data-visible="loggedOut"
+            <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#loginModal" data-auth="login" data-visible="loggedOut"
             >
               Login
             </button>
@@ -186,16 +141,10 @@
     <div class="d-none templates">
       <template id="profileButton">
         <a
-          href=""
-          class="profile d-flex align-items-center me-2 text-decoration-none"
-        >
+          href="" class="profile d-flex align-items-center me-2 text-decoration-none">
           <img
             src=""
-            style="
-              width: 2.5rem;
-              border-radius: 50%;
-              z-index: 2;
-              transform: translateX(1.5rem);
+            style="width: 2.5rem;border-radius: 50%;z-index: 2;transform: translateX(1.5rem);
             "
             class="img-fluid me-2"
             alt=""
@@ -205,10 +154,7 @@
       </template>
 
       <template id="reactionButton">
-        <button
-          type="button"
-          class="btn btn-sm btn-outline-success"
-          data-reaction
+        <button type="button" class="btn btn-sm btn-outline-success" data-reaction
         >
           <span
             class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
@@ -258,52 +204,30 @@
       <template id="postForm">
         <form class="row mt-3" id="postForm">
           <div
-            class="col-12 d-flex justify-content-between flex-wrap align-items-center mb-3"
-          >
+            class="col-12 d-flex justify-content-between flex-wrap align-items-center mb-3">
             <h1>Post</h1>
             <button type="submit" class="btn btn-success" data-action="submit">
-              <span data-action="publish">Publish</span
-              ><span data-action="update">Update</span> Post
+              <span data-action="publish">Publish</span>
+              <span data-action="update">Update</span> Post
             </button>
           </div>
           <div class="col-12 col-md-6">
             <div class="form-floating mb-3">
-              <input
-                required
-                type="text"
-                class="form-control"
-                id="postTitle"
-                name="title"
-                placeholder="Post Title"
+              <input required type="text" class="form-control" id="postTitle" name="title" placeholder="Post Title"
               />
               <label for="postTitle">Post Title*</label>
             </div>
             <div class="form-floating mb-3">
-              <input
-                type="text"
-                class="form-control"
-                id="postTags"
-                name="tags"
-                placeholder="Post Title"
+              <input type="text" class="form-control" id="postTags" name="tags" placeholder="Post Title"
               />
               <label for="postTags">Post Tags</label>
             </div>
             <div class="form-floating mb-3">
-              <input
-                type="url"
-                class="form-control"
-                id="postMedia"
-                name="media"
-                placeholder="Post Title"
-              />
+              <input type="url" class="form-control" id="postMedia" name="media" placeholder="Post Title"/>
               <label for="postMedia">Post Media</label>
             </div>
             <div class="form-floating mb-3">
-              <textarea
-                class="form-control"
-                name="body"
-                id="postBody"
-                rows="50"
+              <textarea class="form-control" name="body" id="postBody" rows="50"
               ></textarea>
               <label for="postMedia">Post Body</label>
             </div>
@@ -327,9 +251,7 @@
       <template id="postActions">
         <div class="post-actions btn-group-sm">
           <a href="" class="btn btn-primary" data-action="view">View</a>
-          <button type="button" class="btn btn-danger" data-action="delete">
-            Delete
-          </button>
+          <button type="button" class="btn btn-danger" data-action="delete">Delete</button>
         </div>
       </template>
 
@@ -337,7 +259,7 @@
         <div class="card mb-3 thumbnail post fade-in"></div>
       </template>
 
-      <template id="comment">
+      <!-- <template id="comment">
         <div class="comment">
           <div class="comment-header">
             <a href="" class="owner">owner</a>
@@ -356,16 +278,11 @@
             and the like).
           </div>
         </div>
-      </template>
+      </template> -->
 
       <template id="commentForm">
         <form class="comment-form">
-          <textarea
-            class="form-control"
-            name="body"
-            id="commentBody"
-            cols="30"
-            rows="10"
+          <textarea class="form-control" name="body" id="commentBody" cols="30" rows="10"
           ></textarea>
           <button type="submit" class="btn btn-success w-100">Comment</button>
         </form>
@@ -374,21 +291,8 @@
       <template id="postTabs">
         <nav>
           <div class="nav nav-tabs" role="tablist">
-            <button
-              type="button"
-              class="nav-link active"
-              id="nav-tab-default"
-              data-bs-toggle="tab"
-              data-bs-target="#nav-default"
-              type="button"
-              role="tab"
-              aria-controls="nav-default"
-              aria-selected="true"
-            >
-              View
-            </button>
-            <button type="button" class="nav-link" id="nav-tab-edit" data-bs-toggle="tab" data-bs-target="#nav-edit" type="button" role="tab" aria-controls="nav-edit" aria-selected="false">Edit
-            </button>
+            <button type="button" class="nav-link active" id="nav-tab-default" data-bs-toggle="tab" data-bs-target="#nav-default" type="button" role="tab" aria-controls="nav-default" aria-selected="true">View</button>
+            <button type="button" class="nav-link" id="nav-tab-edit" data-bs-toggle="tab" data-bs-target="#nav-edit" type="button" role="tab" aria-controls="nav-edit" aria-selected="false">Edit</button>
           </div>
         </nav>
         <div class="tab-content" id="nav-tabContent">
