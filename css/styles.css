@@ -3,9 +3,12 @@ nav {
     padding-bottom: 10px;
 }
 
-h1 {
+h1,
+.headingOne {
     font-family: 'Agbalumo', Arial, Helvetica, sans-serif;
     color: #FFFFFE;
+    text-align: center;
+    padding: 20px;
 }
 
 p {
