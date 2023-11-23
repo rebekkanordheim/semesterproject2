@@ -14,31 +14,6 @@
 </head>
 <body>
     <header>
-        <!-- <nav>
-            <a href="/index.html">
-                <img class="pawbidslogo" src="/images/pawbids-dark.png">
-            </a>
-            <button type=button class="btn btn-outline-success me-2">
-                Buy
-            </button>
-            <button type=button class="btn btn-outline-success me-2">
-                Sell
-            </button>
-            <form class="col mb-3 mb-sm-0 me-sm-3" role="search">
-                <input type="search" class="form-control" placeholder="Search" aria-label="Search">
-            </form>
-            <div class="text-end">
-                <button type="button" class="btn btn-outline-warning me-2" data-auth="logout" data-visible="loggedIn">
-                  Logout
-                </button>
-                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#registerModal" data-auth="register" data-visible="loggedOut">
-                    Create Profile
-                  </button>
-                <button type="button" class="btn btn-outline-success me-2" data-bs-toggle="modal" data-bs-target="#loginModal" data-auth="login" data-visible="loggedOut">
-                  Login
-                </button>
-              </div>
-        </nav> -->
         <!-- NAV MANGLER CREATE PROFILE OSV -->
         <nav>
             <div class="container-fluid">
@@ -67,65 +42,88 @@
     </header>
     <main>
         <div class="body-wrapper">
-            <img class="this" src="/images/photo-1523480717984-24cba35ae1ef.png">
-            <div class="overlay-text">
-                <h1>Hello Paws!</h1>
-                <p>Welcome to PawBids:
-                <br>Where Tails Wag and Bids Blossom!</p>
-            </div>
             <div>
-                <h1>Hello Paws!</h1>
+                <img class="overlayImage" src="/images/photo-1523480717984-24cba35ae1ef.png">
+                <div class="overlay-text">
+                    <h1>Hello Paws!</h1>
+                    <p>Welcome to PawBids:
+                    <br>Where Tails Wag and Bids Blossom!</p>
+                </div>
             </div>
+            <div class="card-content">
+                <h1>Choose your auction</h1>
             <div class="cards">
-                <div class="product-cards">
-                    <h3 class="cards-header">
+                <div class="product-cards" onclick="window.location.href='html/collars.html'" >
+                    <h2 class="cards-header">
                         Collars
-                    </h3>
-                    <button type=button onclick="window.location.href='collars.html'" class="actionButtonOne">Collars</button>
+                    </h2>
+                    <img class="card-image" src="/images/photo-1586671267731-da2cf3ceeb80.webp">
+                    <button type=button onclick="window.location.href='html/collars.html'" class="actionButtonOne cardButton">Collars</button>
                 </div>
             </div>
             <div class="cards">
-                <div class="product-cards">
-                    <h3 class="cards-header">
+                <div class="product-cards" onclick="window.location.href='html/beds.html'" >
+                    <h2 class="cards-header">
                         Beds
-                    </h3>
-                    <button type=button onclick="window.location.href='beds.html'" class="actionButtonOne">Beds</button>
+                    </h2>
+                    <img class="card-image" src="/images/photo-1581888227599-779811939961.webp">
+                    <button type=button onclick="window.location.href='html/beds.html'" class="actionButtonOne cardButton">Beds</button>
                 </div>
             </div>
             <div class="cards">
-                <div class="product-cards">
-                    <h3 class="cards-header">
+                <div class="product-cards" onclick="window.location.href='html/fashion.html'" >
+                    <h2 class="cards-header">
                         Fashion
-                    </h3>
-                    <button type=button onclick="window.location.href='fashion.html'" class="actionButtonOne">Fashion</button>
+                    </h2>
+                    <img class="card-image" src="/images/premium_photo-1666278379788-681acac1fab4.webp">
+                    <button type=button onclick="window.location.href='html/fashion.html'" class="actionButtonOne cardButton">Fashion</button>
                 </div>
             </div>
 
 
             <div class="cards">
-                <div class="product-cards">
-                    <h3 class="cards-header">
+                <div class="product-cards" onclick="window.location.href='html/toys.html'" >
+                    <h2 class="cards-header">
                         Toys
-                    </h3>
-                    <button type=button onclick="window.location.href='toys.html'" class="actionButtonOne">Toys</button>
+                    </h2>
+                    <img class="card-image" src="/images/photo-1618397360709-9dd900837411.webp">
+                    <button type=button onclick="window.location.href='html/toys.html'" class="actionButtonOne cardButton">Toys</button>
                 </div>
             </div>
             <div class="cards">
-                <div class="product-cards">
-                    <h3 class="cards-header">
+                <div class="product-cards" onclick="window.location.href='html/foodAccessories.html'" >
+                    <h2 class="cards-header">
                         Food accessories
-                    </h3>
-                    <button type=button onclick="window.location.href='FoodAccessories.html'" class="actionButtonOne">Food accessories</button>
+                    </h2>
+                    <img class="card-image" src="/images/ayla-verschueren-QIbjKOsmIhQ-unsplash.jpg">
+                    <button type=button onclick="window.location.href='html/foodAccessories.html'" class="actionButtonOne cardButton">Food accessories</button>
                 </div>
             </div>
             <div class="cards">
-                <div class="product-cards">
-                    <h3 class="cards-header">
-                        Fashion
-                    </h3>
-                    <button type=button onclick="window.location.href='fashion.html'" class="actionButtonOne">Fashion</button>
+                <div class="product-cards" onclick="window.location.href='html/outdoor.html'" >
+                    <h2 class="cards-header">
+                        Outdoor
+                    </h2>
+                    <img class="card-image" src="/images/photo-1548135160-2ddd99526762.webp">
+                    <button type=button onclick="window.location.href='html/outdoor.html'" class="actionButtonOne cardButton">Outdoor</button>
                 </div>
             </div>
+        </div>
+        <div class="homeInformation">
+            <h2>Why PawBids?</h2>
+            <p>PawBids leads the way in the reuse market for dog accessories, offering a curated platform for quality, gently-used items.
+            <br>
+            <br> PawBids for eco-friendly pet ownership that combines sustainability with top-notch products, ensuring a second life for every accessory.
+            <br>
+            <br>Join us in making a positive impact on both your pet's life and the environment.
+            <br>
+            <br>Best regards form us in
+            <br>
+            <a href="index.html">
+                <img class="homeInformationImage" src="/images/pawbids-light.png" alt="pawbids logo">
+            </a>
+
+    </p>
         </div>
     </main>
     <footer>

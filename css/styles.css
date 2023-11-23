@@ -4,6 +4,7 @@ nav {
 }
 
 h1,
+h2,
 .headingOne {
     font-family: 'Agbalumo', Arial, Helvetica, sans-serif;
     color: #FFFFFE;
@@ -20,7 +21,6 @@ p {
 body {
     margin: 0;
     padding: 0;
-    overflow: hidden;
 }
 
 footer {
@@ -40,17 +40,19 @@ footer {
     bottom: 0;
 }
 
-.this {
-    display: block;
+.overlayImage {
+    /* display: block;
     width: 100%;
-    height: auto;
+    height: auto; */
+    max-width: auto;
+    max-height: 500px;
 }
 
 .overlay-text {
     position: relative;
     top: 40%;
     left: 50%;
-    transform: translate(-50%, -100%);
+    transform: translate(-50%, -90%);
     color: #fff;
     padding: 10px 20px;
     font-size: 30px;
@@ -65,6 +67,7 @@ footer {
     margin-left: 5px;
     margin-right: 5px;
 }
+
 .actionButtonTwo {
     border: 2px solid #001E1D;
     border-radius: 5px;
@@ -74,6 +77,53 @@ footer {
     margin-right: 5px;
 }
 
-form {
-    max-width: 200px;
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.product-cards {
+    border: 1px solid #FFFFFE;
+    background-color: #fffffe77;
+    border-radius: 10px;
+    width: 300px;
+    padding: 10px;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.card-content {
+    margin-top: -110px;
+    padding: 20px;
+}
+
+.card-image,
+.homeInformationImage {
+    height: 250px;
+    width: 250px;
+    padding: 5px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.cardButton {
+    padding: 20px;
+    font-size: 20px;
+}
+
+.homeInformation,
+.homeInformation p{
+    background-color: #abd1c6;
+    color:#001E1D;
+    padding: 10px;
+
+    text-align: center;
+}
+.homeInformationImage {
+    max-width: fit-content;
 }
