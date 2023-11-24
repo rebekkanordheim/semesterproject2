@@ -10,37 +10,72 @@
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="./src/js/index.js" defer type="module"></script>
+    <script src="/index.js" defer></script>
     <title>Paw Bids | Home</title>
 </head>
 <body>
-    <header>
-        <!-- NAV MANGLER CREATE PROFILE OSV -->
-        <nav>
-            <div class="container-fluid">
-              <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-sm-start" >
-                <a href="/index.html" class="d-flex align-items-center mb-2 me-sm-3 mb-sm-0 text-white text-decoration-none">
-                  <img style="width: 7rem" src="/images/pawbids-dark.png" alt="PawBids Logo"/>
-                </a>
-                <!-- ENDRE HVA SOM SKJER HER OG HVOR MAN BLIR VIDERESENDT -->
-                <button type=button onclick="window.location.href='sell.html'" class="actionButtonOne">Sell</button>
-                <button type=button class="actionButtonOne">Buy</button>
-                <form role="search">
-                  <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search"/>
-                </form>
-                <button type="button" class="actionButtonTwo" data-bs-toggle="modal" data-bs-target="#registerModal" data-auth="register" data-visible="loggedOut">Create Profile
-             </button>
-                  <!-- ENDRE FARGE OG TYPEN KNAPP (SKJER IKKE NOE ENDA) -->
-                  <button type="button" class="actionButtonOne me-2" data-bs-toggle="modal" data-bs-target="#loginModal" data-auth="login" data-visible="loggedOut">Login
-            </button>
-                  <!-- ENDRE FARGE OG TYPEN KNAPP (SKJER IKKE NOE ENDA) -->
-                  <button type="button" class="actionButtonTwo" data-auth="logout" data-visible="loggedIn">Logout
-            </button>
-                </div>
-              </div>
-            </div>
-          </nav>
-    </header>
-    <main>
+  <header class="py-3 sticky-top shadow">
+    <div class="container-fluid">
+      <div
+        class="d-flex flex-wrap align-items-center justify-content-center justify-content-sm-start"
+      >
+        <a
+          href="./"
+          class="d-flex align-items-center mb-2 me-sm-3 mb-sm-0 text-white text-decoration-none"
+        >
+          <img
+            style="width: 5rem"
+            src="/images/pawbids-dark.png"
+            alt="Noroff Logo"
+          />
+        </a>
+
+        <form class="col mb-3 mb-sm-0 me-sm-3" role="search">
+          <input
+            type="search"
+            class="form-control form-control-dark text-bg-dark"
+            placeholder="Search..."
+            aria-label="Search"
+          />
+        </form>
+
+        <div class="text-end">
+          <button
+            type="button"
+            class="btn btn-outline-warning me-2"
+            data-auth="logout"
+            data-visible="loggedIn"
+            id="logoutButton"
+          >
+            Logout
+          </button>
+          <button
+            type="button"
+            class="btn btn-outline-success me-2"
+            data-bs-toggle="modal"
+            data-bs-target="#loginModal"
+            data-auth="login"
+            data-visible="loggedOut"
+          >
+            Login
+          </button>
+          <button
+            type="button"
+            class="btn btn-success"
+            data-bs-toggle="modal"
+            data-bs-target="#registerModal"
+            data-auth="register"
+            data-visible="loggedOut"
+          >
+            Create Profile
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+    <main class="flex-grow-1 container-fluid mt-3">
         <div class="body-wrapper">
             <div>
                 <img class="overlayImage" src="/images/photo-1523480717984-24cba35ae1ef.png">
@@ -122,19 +157,98 @@
             <a href="index.html">
                 <img class="homeInformationImage" src="/images/pawbids-light.png" alt="pawbids logo">
             </a>
-
-    </p>
+          </p>
         </div>
     </main>
-    <footer>
-        <div class="col">
-            <p>© 2023 Rebekka Nordheim</p>
-        </div>
-        <div id="footerActions">
-            <a href="./?view=post" data-visible="loggedIn" class="btn btn-outline-success">New Post</a>
+    <footer class="shadow position-sticky bottom-0 py-3">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col">© 2022 Noroff FEU</div>
+          <div class="col-auto" data-visible="loggedIn">
+            <div class="d-flex align-items-center" id="footerActions">
+              <a
+                href="./?view=post"
+                data-visible="loggedIn"
+                class="btn btn-outline-success"
+                >New Post</a
+              >
+            </div>
           </div>
+        </div>
+      </div>
     </footer>
-    <div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+
+    <div class="modal fade" id="loginModal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="loginModalLabel"
+      aria-hidden="true">
+      <div
+        class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <form class="modal-content" id="loginForm">
+          <div class="modal-header">
+            <h5 class="modal-title" id="loginModalLabel">Login</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-floating mb-3">
+              <input
+                required
+                type="email"
+                class="form-control"
+                id="loginEmail"
+                name="email"
+                pattern="[\w\-.]+@stud\.noroff\.no$"
+                title="Only Noroff student or teacher emails are valid."
+                placeholder="name@example.com"
+              />
+              <label for="loginEmail">Email address</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input
+                required
+                type="password"
+                minlength="8"
+                class="form-control"
+                id="loginPassword"
+                name="password"
+                placeholder="Password"
+              />
+              <label for="loginPassword">Password</label>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="reset"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-success"
+              data-bs-toggle="modal"
+              data-bs-target="#registerModal"
+              data-auth="register"
+              data-visible="loggedOut"
+            >
+              Register
+            </button>
+            <button type="submit" class="btn btn-success">Login</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal fade" id="registerModal" 
+    data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
       <div
         class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable">
 
@@ -184,10 +298,16 @@
     <div class="d-none templates">
       <template id="profileButton">
         <a
-          href="" class="profile d-flex align-items-center me-2 text-decoration-none">
+          href=""
+          class="profile d-flex align-items-center me-2 text-decoration-none"
+        >
           <img
             src=""
-            style="width: 2.5rem;border-radius: 50%;z-index: 2;transform: translateX(1.5rem);
+            style="
+              width: 2.5rem;
+              border-radius: 50%;
+              z-index: 2;
+              transform: translateX(1.5rem);
             "
             class="img-fluid me-2"
             alt=""
@@ -197,7 +317,10 @@
       </template>
 
       <template id="reactionButton">
-        <button type="button" class="btn btn-sm btn-outline-success" data-reaction
+        <button
+          type="button"
+          class="btn btn-sm btn-outline-success"
+          data-reaction
         >
           <span
             class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
@@ -247,30 +370,52 @@
       <template id="postForm">
         <form class="row mt-3" id="postForm">
           <div
-            class="col-12 d-flex justify-content-between flex-wrap align-items-center mb-3">
+            class="col-12 d-flex justify-content-between flex-wrap align-items-center mb-3"
+          >
             <h1>Post</h1>
             <button type="submit" class="btn btn-success" data-action="submit">
-              <span data-action="publish">Publish</span>
-              <span data-action="update">Update</span> Post
+              <span data-action="publish">Publish</span
+              ><span data-action="update">Update</span> Post
             </button>
           </div>
           <div class="col-12 col-md-6">
             <div class="form-floating mb-3">
-              <input required type="text" class="form-control" id="postTitle" name="title" placeholder="Post Title"
+              <input
+                required
+                type="text"
+                class="form-control"
+                id="postTitle"
+                name="title"
+                placeholder="Post Title"
               />
               <label for="postTitle">Post Title*</label>
             </div>
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="postTags" name="tags" placeholder="Post Title"
+              <input
+                type="text"
+                class="form-control"
+                id="postTags"
+                name="tags"
+                placeholder="Post Title"
               />
               <label for="postTags">Post Tags</label>
             </div>
             <div class="form-floating mb-3">
-              <input type="url" class="form-control" id="postMedia" name="media" placeholder="Post Title"/>
+              <input
+                type="url"
+                class="form-control"
+                id="postMedia"
+                name="media"
+                placeholder="Post Title"
+              />
               <label for="postMedia">Post Media</label>
             </div>
             <div class="form-floating mb-3">
-              <textarea class="form-control" name="body" id="postBody" rows="50"
+              <textarea
+                class="form-control"
+                name="body"
+                id="postBody"
+                rows="50"
               ></textarea>
               <label for="postMedia">Post Body</label>
             </div>
@@ -294,7 +439,9 @@
       <template id="postActions">
         <div class="post-actions btn-group-sm">
           <a href="" class="btn btn-primary" data-action="view">View</a>
-          <button type="button" class="btn btn-danger" data-action="delete">Delete</button>
+          <button type="button" class="btn btn-danger" data-action="delete">
+            Delete
+          </button>
         </div>
       </template>
 
@@ -302,7 +449,7 @@
         <div class="card mb-3 thumbnail post fade-in"></div>
       </template>
 
-      <!-- <template id="comment">
+      <template id="comment">
         <div class="comment">
           <div class="comment-header">
             <a href="" class="owner">owner</a>
@@ -321,11 +468,16 @@
             and the like).
           </div>
         </div>
-      </template> -->
+      </template>
 
       <template id="commentForm">
         <form class="comment-form">
-          <textarea class="form-control" name="body" id="commentBody" cols="30" rows="10"
+          <textarea
+            class="form-control"
+            name="body"
+            id="commentBody"
+            cols="30"
+            rows="10"
           ></textarea>
           <button type="submit" class="btn btn-success w-100">Comment</button>
         </form>
@@ -334,13 +486,48 @@
       <template id="postTabs">
         <nav>
           <div class="nav nav-tabs" role="tablist">
-            <button type="button" class="nav-link active" id="nav-tab-default" data-bs-toggle="tab" data-bs-target="#nav-default" type="button" role="tab" aria-controls="nav-default" aria-selected="true">View</button>
-            <button type="button" class="nav-link" id="nav-tab-edit" data-bs-toggle="tab" data-bs-target="#nav-edit" type="button" role="tab" aria-controls="nav-edit" aria-selected="false">Edit</button>
+            <button
+              type="button"
+              class="nav-link active"
+              id="nav-tab-default"
+              data-bs-toggle="tab"
+              data-bs-target="#nav-default"
+              type="button"
+              role="tab"
+              aria-controls="nav-default"
+              aria-selected="true"
+            >
+              View
+            </button>
+            <button
+              type="button"
+              class="nav-link"
+              id="nav-tab-edit"
+              data-bs-toggle="tab"
+              data-bs-target="#nav-edit"
+              type="button"
+              role="tab"
+              aria-controls="nav-edit"
+              aria-selected="false"
+            >
+              Edit
+            </button>
           </div>
         </nav>
         <div class="tab-content" id="nav-tabContent">
-          <div class="tab-pane fade show active border-start border-end border-bottom p-3" id="nav-default" role="tabpanel" aria-labelledby="nav-tab-default" tabindex="0"></div>
-          <div class="tab-pane fade border-start border-end border-bottom p-3" id="nav-edit" role="tabpanel" aria-labelledby="nav-tab-edit" tabindex="0"
+          <div
+            class="tab-pane fade show active border-start border-end border-bottom p-3"
+            id="nav-default"
+            role="tabpanel"
+            aria-labelledby="nav-tab-default"
+            tabindex="0"
+          ></div>
+          <div
+            class="tab-pane fade border-start border-end border-bottom p-3"
+            id="nav-edit"
+            role="tabpanel"
+            aria-labelledby="nav-tab-edit"
+            tabindex="0"
           ></div>
         </div>
       </template>
@@ -351,10 +538,26 @@
 
       <template id="profilePagePrivate">
         <div class="card profile page private mb-3">
-          <div class="upper border-bottom d-flex justify-content-between align-items-start p-3">
+          <div
+            class="upper border-bottom d-flex justify-content-between align-items-start p-3"
+          >
             <div class="btn-group btn-group-sm">
-              <button type="button" class="btn btn-sm btn-success" data-action="follow" data-name="">Follow</button>
-              <button type="button" class="btn btn-sm btn-danger" data-action="unfollow" data-name="">Unfollow</button>
+              <button
+                type="button"
+                class="btn btn-sm btn-success"
+                data-action="follow"
+                data-name=""
+              >
+                Follow
+              </button>
+              <button
+                type="button"
+                class="btn btn-sm btn-danger"
+                data-action="unfollow"
+                data-name=""
+              >
+                Unfollow
+              </button>
             </div>
           </div>
 
