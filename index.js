@@ -4,17 +4,20 @@ import ui from "./ui/index.js";
 ui()
 router() */
 
-// Function to check if the user is logged in
+// Assuming you have a function to check the authentication status
 function isUserLoggedIn() {
-    // Implement your logic here to check if the user is logged in
-    // For example, check if you have a valid token or user session
-    // Return true if logged in, false otherwise
-    return true;
-  }
+    // Replace this with your actual authentication check logic
+    // For example, check if a user is logged in based on stored tokens, etc.
+    const userToken = localStorage.getItem("token"); // Assuming you store the token in local storage
   
-  // Function to update header button visibility based on authentication status
+    // Return true if the user is logged in (token is present), false otherwise
+    return !!userToken;
+  }
+import login from "./src/js/api/auth/login";
+  
+  // Function to update button visibility based on authentication status
   function updateHeaderButtonVisibility() {
-    const logoutButton = document.getElementById('logoutButton'); // Assuming the ID is set for the logout button
+    const logoutButton = document.getElementById('logoutButton');
     const loginButton = document.querySelector('[data-auth=login]');
     const registerButton = document.querySelector('[data-auth=register]');
   
@@ -31,4 +34,10 @@ function isUserLoggedIn() {
     }
   }
   
+  // Add an event listener for the page load or when the user logs in/out
   document.addEventListener('DOMContentLoaded', updateHeaderButtonVisibility);
+  
+  // Add this wherever you perform login/logout actions
+  // For example, after successfully logging in or out
+  // Call updateHeaderButtonVisibility() to update button visibility accordingly
+  

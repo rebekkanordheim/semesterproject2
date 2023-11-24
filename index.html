@@ -12,7 +12,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="./src/js/index.js" defer type="module"></script>
-    <script src="/index.js" defer></script>
+    <script src="/index.js" defer type="module"></script>
     <title>Paw Bids | Home</title>
 </head>
 <body>
@@ -53,16 +53,6 @@
           </button>
           <button
             type="button"
-            class="btn btn-outline-success me-2"
-            data-bs-toggle="modal"
-            data-bs-target="#loginModal"
-            data-auth="login"
-            data-visible="loggedOut"
-          >
-            Login
-          </button>
-          <button
-            type="button"
             class="btn btn-success"
             data-bs-toggle="modal"
             data-bs-target="#registerModal"
@@ -71,6 +61,17 @@
           >
             Create Profile
           </button>
+          <button
+            type="button"
+            class="btn btn-outline-success me-2"
+            data-bs-toggle="modal"
+            data-bs-target="#loginModal"
+            data-auth="login"
+            data-visible="loggedOut"
+          >
+            Login
+          </button>
+          
         </div>
       </div>
     </div>
@@ -85,8 +86,8 @@
                     <br>Where Tails Wag and Bids Blossom!</p>
                 </div>
             </div>
+            <h1>Choose your auction</h1>
             <div class="card-content">
-                <h1>Choose your auction</h1>
             <div class="cards">
                 <div class="product-cards" onclick="window.location.href='html/collars.html'" >
                     <h2 class="cards-header">
