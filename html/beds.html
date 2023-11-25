@@ -88,22 +88,31 @@
                 <div class="cards">
                     <div class="product-cards" onclick="window.location.href='html/collars.html'" >
                         <h2 class="cards-header">
-                            Collars
+                            Bed 1
                         </h2>
-                        <img class="card-image" src="/images/photo-1586671267731-da2cf3ceeb80.webp">
-                        <button type=button onclick="window.location.href='html/collars.html'" class="actionButtonOne cardButton">Bid</button>
+                        <img class="card-image" src="/images/roberto-nickson-V6G2m3D9IDI-unsplash.jpg">
+                        <button type=button onclick="window.location.href='html/collars.html'" class="actionButtonOne cardButton">Show</button>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-    <footer>
-        <div class="col">
-            <p>© 2023 Rebekka Nordheim</p>
-        </div>
-        <div id="footerActions">
-            <a href="./?view=post" data-visible="loggedIn" class="btn btn-outline-success">New Post</a>
+    <footer class="shadow position-sticky bottom-0 py-3">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col">© 2023 Rebekka Nordheim</div>
+          <div class="col-auto" data-visible="loggedIn">
+            <div class="d-flex align-items-center" id="footerActions">
+              <a
+                href="./?view=post"
+                data-visible="loggedIn"
+                class="btn btn-outline-success"
+                >New Post</a
+              >
+            </div>
           </div>
+        </div>
+      </div>
     </footer>
     <div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
       <div
