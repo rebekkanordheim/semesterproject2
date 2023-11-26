@@ -4,7 +4,7 @@ import ui from "./ui/index.js";
 ui()
 router() */
 
-// Assuming you have a function to check the authentication status
+/* // Assuming you have a function to check the authentication status
 function isUserLoggedIn() {
     // Replace this with your actual authentication check logic
     // For example, check if a user is logged in based on stored tokens, etc.
@@ -40,4 +40,4 @@ import login from "./src/js/api/auth/login";
   // Add this wherever you perform login/logout actions
   // For example, after successfully logging in or out
   // Call updateHeaderButtonVisibility() to update button visibility accordingly
-  
+   */

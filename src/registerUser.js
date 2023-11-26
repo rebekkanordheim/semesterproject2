@@ -1,37 +1,76 @@
-function validateForm() {
-    // Get form inputs
-    var name = document.getElementById('registerName').value;
-    var email = document.getElementById('registerEmail').value;
-    var password = document.getElementById('registerPassword').value;
+// Function to handle form submission
+function handleRegistration(event) {
+    event.preventDefault();
 
-    // Validate name 
-    if (name.length < 1) {
-        alert('Name must be at least 1 character long.');
-        return false;
-    }
-    // Validate email 
-    if (!email.endsWith('@stud.noroff.no')) {
-        alert('Email must be a @stud.noroff.no email.');
-        return false;
-    }
-    // Validate password
-    if (password.length < 8) {
-        alert('Password must be at least 8 characters long.');
-        return false;
-    }
+    // Select form elements
+    const nameInput = document.getElementById('registerName');
+    const emailInput = document.getElementById('registerEmail');
+    const passwordInput = document.getElementById('registerPassword');
+    const avatarInput = document.getElementById('registerAvatar');
 
-    // If all validations pass, proceed to index.html
-    var jwtToken = generateJWT(); // Need to implement a function to generate a JWT token
-    localStorage.setItem('username', name);
-    localStorage.setItem('jwtToken', jwtToken);
-
-    window.location.href = 'index.html';
-    return true;
+    // Validate form inputs
+    if (
+        nameInput.value.length >= 1 &&
+        passwordInput.value.length >= 8 &&
+        emailInput.value.match(/^[\w\-.]+@stud\.noroff\.no$/) &&
+        avatarInput.value.trim() !== ''
+    ) {
+        // If inputs are valid, register the user
+        registerUser(
+            nameInput.value,
+            emailInput.value,
+            passwordInput.value,
+            avatarInput.value
+        );
+    } else {
+        alert('Name must be at least 1 character long. Password must be 8 characters long, and email must be a valid Noroff student email, and remember an avatar image URL');
+    }
 }
+const registerButton = document.getElementById('registerButton');
+registerButton.addEventListener('click', handleRegistration);
 
-// Function to generate a simple JWT token (for demonstration purposes)
-function generateJWT() {
-    // Implement your JWT generation logic here
-    // This is a simplified example and not secure for production use
-    return 'yourGeneratedJWT';
+
+
+// Function to register the user
+function registerUser(name, email, password, avatar) {
+    const registerUrl = 'https://api.noroff.dev/api/v1/auction/auth/register';
+
+    const userData = {
+        name: name,
+        email: email,
+        password: password,
+        avatar: avatar
+    };
+
+    const fetchOptions = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(userData)
+    };
+
+    fetch(registerUrl, fetchOptions)
+        .then(response => {
+            if (response.ok) {
+                // Registration successful, get JWT token from the response
+                return response.json();
+            } else {
+                throw new Error('Registration failed. Please try again.');
+            }
+        })
+        .then(data => {
+            // Assuming the API returns a token property in the response
+            const token = data.token;
+
+            // Store the token in local storage
+            localStorage.setItem('jwtToken', token);
+
+            console.log('Registration successful! Token:', token);
+            // You might want to redirect the user or perform other actions
+        })
+        .catch(error => {
+            console.error('Error during registration:', error);
+            alert(error.message || 'An error occurred. Please try again later.');
+        });
 }
