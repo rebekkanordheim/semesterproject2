@@ -13,12 +13,24 @@ function handleLogin(event) {
         loginUser(emailInput.value, passwordInput.value);
         // close the form and reset the values
         loginForm.reset();
+
+        // Hide the login modal
         const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
         loginModal.hide();
+
+        // Optionally, you can close or remove the login form as well
+        loginForm.style.display = 'none'; // or loginForm.remove();
+
+        // Optionally, you can hide the modal backdrop as well
+        const modalBackdrops = document.getElementsByClassName('modal-backdrop');
+        for (const backdrop of modalBackdrops) {
+            backdrop.style.display = 'none';
+        }
     } else {
         alert('Email must be a valid Noroff student email, and password must be 8 characters long.');
     }
 }
+
 
 // Add a click event listener to the login button
 const loginButton = document.getElementById('loginButton');
