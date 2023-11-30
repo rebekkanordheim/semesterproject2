@@ -13,6 +13,7 @@
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
     <script src="registerUser.js" defer></script>
     <script src="loginUser.js" defer></script>
+    <script src="isLoggedIn.js" defer></script>
     <title>Paw Bids | Home</title>
 </head>
 <body>
@@ -58,6 +59,7 @@
             data-bs-target="#registerModal"
             data-auth="register"
             data-visible="loggedOut"
+            id="createProfileButton"
           >
             Create Profile
           </button>
@@ -71,7 +73,6 @@
           >
             Login
           </button>
-          
         </div>
       </div>
     </div>
@@ -214,7 +215,11 @@
             >
               Register
             </button>
-            <button type="submit" class="btn btn-success" id="loginButton">Login</button>
+            <button
+            type="submit" 
+            class="btn btn-success" 
+            id="loginButton">
+            Login</button>
           </div>
         </form>
       </div>

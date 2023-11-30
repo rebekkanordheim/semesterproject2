@@ -25,7 +25,7 @@ const loginButton = document.getElementById('loginButton');
 loginButton.addEventListener('click', handleLogin);
 
 
-/// Function to log in the user
+// Function to log in the user
 function loginUser(email, password) {
     const loginUrl = 'https://api.noroff.dev/api/v1/auction/auth/login';
     const userData = {
