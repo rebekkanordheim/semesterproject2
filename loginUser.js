@@ -117,8 +117,10 @@ function handleLogin(event) {
     }
 }
 
+// loginUser.js
+
 // Function to log in the user
-function loginUser(email, password) {
+async function loginUser(email, password) {
     const loginUrl = 'https://api.noroff.dev/api/v1/auction/auth/login';
     const userData = {
         email: email,
@@ -135,37 +137,30 @@ function loginUser(email, password) {
             body: JSON.stringify(userData),
         };
 
-        fetch(loginUrl, postData)
-            .then(response => {
-                if (response.ok) {
-                    // Login successful
-                    console.log('Login successful! Email:', email);
-                    document.getElementById('loginSuccessMessage').textContent = 'Login successful! Email: ' + email;
-                    return response.json();
-                } else {
-                    throw new Error('Login failed. Please check your email and password, and ensure you have registered first.');
-                }
-            })
-            .then(data => {
-                // Assuming the API returns a token property in the response
-                const token = data.accessToken;
-                // Saving the JWT token to local storage
-                localStorage.setItem('jwtToken', token);
+        const response = await fetch(loginUrl, postData);
 
-                // Toggle visibility of buttons based on the JWT token
-                toggleButtonVisibility();
+        if (response.ok) {
+            // Login successful
+            const data = await response.json();
+            const token = data.accessToken;
 
-                // Display a success message
-                alert('Login successful! Email: ' + email);
-            })
-            .catch(error => {
-                // Handle login error
-                console.error('Error during login', error);
-                alert('An error occurred. Please try again later.');
-            });
+            // Saving the JWT token to local storage
+            localStorage.setItem('jwtToken', token);
+
+            // Toggle visibility of buttons based on the JWT token
+            toggleButtonVisibility();
+
+            // Display a success message
+            console.log('Login successful! Email:', email);
+            document.getElementById('loginSuccessMessage').textContent = 'Login successful! Email: ' + email;
+        } else {
+            // Handle login error
+            throw new Error('Login failed. Please check your email and password, and ensure you have registered first.');
+        }
     } catch (error) {
-        console.error('Unexpected error during login', error);
-        alert('An unexpected error occurred. Please try again later.');
+        // Handle errors during login
+        console.error('Error during login', error);
+        alert('An error occurred. Please try again later.');
     }
 }
 
