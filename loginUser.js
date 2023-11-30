@@ -1,5 +1,5 @@
 // function to handle the login form submission
-function handleLogin(event) {
+export function handleLogin(event) {
     event.preventDefault();
 
     // select the form elements
@@ -37,7 +37,7 @@ loginButton.addEventListener('click', handleLogin);
 
 
 // Function to log in the user
-function loginUser(email, password) {
+export function loginUser(email, password) {
     const loginUrl = 'https://api.noroff.dev/api/v1/auction/auth/login';
     const userData = {
         email: email,
@@ -83,4 +83,3 @@ function loginUser(email, password) {
         alert('An unexpected error occurred. Please try again later.');
     }
 }
-

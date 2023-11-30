@@ -1,5 +1,5 @@
 // Function to handle form submission
-function handleRegistration(event) {
+export function handleRegistration(event) {
     event.preventDefault();
 
     // Select form elements
@@ -38,7 +38,7 @@ registerButton.addEventListener('click', handleRegistration);
 
 
 // Function to register the user
-async function registerUser(name, email, password, avatar) {
+export async function registerUser(name, email, password, avatar) {
     const registerUrl = 'https://api.noroff.dev/api/v1/auction/auth/register';
 
     // Validate form inputs

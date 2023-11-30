@@ -1,5 +1,5 @@
 // Function to log out the user
-function logoutUser() {
+export function logoutUser() {
     // Remove the JWT token from local storage
     localStorage.removeItem('jwtToken');
     
