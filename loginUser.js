@@ -88,26 +88,21 @@ function loginUser(email, password) {
 function handleLogin(event) {
     event.preventDefault();
 
-    // select the form elements
     const emailInput = document.getElementById('loginEmail');
     const passwordInput = document.getElementById('loginPassword');
     const loginForm = document.getElementById('loginForm');
 
     // validating the form inputs
     if (emailInput.value.match(/^[\w\-.]+@stud\.noroff\.no$/) && passwordInput.value.length >= 8) {
-        // if the inputs are valid, login the user
         loginUser(emailInput.value, passwordInput.value);
-        // close the form and reset the values
         loginForm.reset();
 
         // Hide the login modal
         const loginModal = new bootstrap.Modal(document.getElementById('loginModal'));
         loginModal.hide();
 
-        // Optionally, you can close or remove the login form as well
-        loginForm.style.display = 'none'; // or loginForm.remove();
+        loginForm.style.display = 'none'
 
-        // Optionally, you can hide the modal backdrop as well
         const modalBackdrops = document.getElementsByClassName('modal-backdrop');
         for (const backdrop of modalBackdrops) {
             backdrop.style.display = 'none';
@@ -116,8 +111,6 @@ function handleLogin(event) {
         alert('Email must be a valid Noroff student email, and password must be 8 characters long.');
     }
 }
-
-// loginUser.js
 
 // Function to log in the user
 async function loginUser(email, password) {
@@ -128,7 +121,6 @@ async function loginUser(email, password) {
     };
 
     try {
-        // Do API call
         const postData = {
             method: 'POST',
             headers: {
@@ -140,25 +132,20 @@ async function loginUser(email, password) {
         const response = await fetch(loginUrl, postData);
 
         if (response.ok) {
-            // Login successful
+
             const data = await response.json();
             const token = data.accessToken;
 
-            // Saving the JWT token to local storage
             localStorage.setItem('jwtToken', token);
 
-            // Toggle visibility of buttons based on the JWT token
             toggleButtonVisibility();
 
-            // Display a success message
             console.log('Login successful! Email:', email);
             document.getElementById('loginSuccessMessage').textContent = 'Login successful! Email: ' + email;
         } else {
-            // Handle login error
             throw new Error('Login failed. Please check your email and password, and ensure you have registered first.');
         }
     } catch (error) {
-        // Handle errors during login
         console.error('Error during login', error);
         alert('An error occurred. Please try again later.');
     }
@@ -173,21 +160,17 @@ function toggleButtonVisibility() {
     const jwtToken = localStorage.getItem('jwtToken');
 
     if (jwtToken) {
-        // JWT token exists, hide create profile and login buttons, show logout button
         registerButton.style.display = 'none';
         loginButton.style.display = 'none';
         logoutButton.style.display = 'inline-block';
     } else {
-        // JWT token does not exist, show create profile and login buttons, hide logout button
         registerButton.style.display = 'inline-block';
         loginButton.style.display = 'inline-block';
         logoutButton.style.display = 'none';
     }
 }
 
-// Call the toggleButtonVisibility function when the page loads
 document.addEventListener('DOMContentLoaded', toggleButtonVisibility);
 
-// Add a click event listener to the login button
 const loginButton = document.getElementById('loginButton');
 loginButton.addEventListener('click', handleLogin);
