@@ -1,11 +1,11 @@
-// Function to check if the user is logged in
+/* // Function to check if the user is logged in
 function checkLoginStatus() {
     const userLoggedIn = localStorage.getItem('jwtToken') !== null;
 
     // Select the buttons
     const logoutButton = document.getElementById('logoutButton');
-    const registerButton = document.querySelector('createProfileButton');
-    const loginButton = document.querySelector('loginButton');
+    const registerButton = document.getElementById('createProfileButton'); // Added '#' here
+    const loginButton = document.getElementById('loginButton'); // Added '#' here
 
     // Toggle visibility based on the user's login status
     if (userLoggedIn) {
@@ -20,4 +20,4 @@ function checkLoginStatus() {
 }
 
 // Call the function when the page loads
-document.addEventListener('DOMContentLoaded', checkLoginStatus);
+document.addEventListener('DOMContentLoaded', checkLoginStatus); */

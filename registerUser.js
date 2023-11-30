@@ -96,5 +96,3 @@ async function registerUser(name, email, password, avatar) {
         alert('Name must be at least 1 character long. Password must be 8 characters long, and email must be a valid Noroff student email, and remember an avatar image URL');
     }
 }
-
-

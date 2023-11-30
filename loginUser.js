@@ -31,7 +31,6 @@ function handleLogin(event) {
     }
 }
 
-
 // Add a click event listener to the login button
 const loginButton = document.getElementById('loginButton');
 loginButton.addEventListener('click', handleLogin);
@@ -84,3 +83,4 @@ function loginUser(email, password) {
         alert('An unexpected error occurred. Please try again later.');
     }
 }
+
