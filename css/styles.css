@@ -27,11 +27,6 @@ body {
     padding: 0;
 }
 
-.modal-open,
-#registerForm {
-    background-color: #004643;
-}
-
 footer {
     background-color: #fffffe;
     padding-left: 20px;
