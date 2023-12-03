@@ -1,3 +1,3 @@
-import { handleLogin, loginUser } from './loginUser.js';
-import { handleRegistration, registerUser} from './registerUser.js';
-import { logoutUser } from './logoutUser.js';
+/* import { handleLogin, loginUser } from './js/loginUser.js';
+import { handleRegistration, registerUser} from './js/registerUser.js';
+import { logoutUser } from './js/logoutUser.js'; */
