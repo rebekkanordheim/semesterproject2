@@ -1,4 +1,4 @@
-// Function to handle the login form submission
+// Handling login-form submission
 async function handleLogin(event) {
     event.preventDefault();
 
@@ -11,19 +11,19 @@ async function handleLogin(event) {
     if (emailInput.value.match(/^[\w\-.]+@stud\.noroff\.no$/) && passwordInput.value.length >= 8) {
         try {
             await loginUser(emailInput.value, passwordInput.value);
-            loginForm.style.display = 'none'; // Hide the entire login form
+            loginForm.style.display = 'none';
             alert('Login successful! Email: ' + emailInput.value);
-            closeModalButton.click(); // Simulate a click on the close button
+            closeModalButton.click();
         } catch (error) {
             console.error('Error during login', error);
             alert('An error occurred. Please try again later.');
         }
     } else {
-        alert('Email must be a valid Noroff student email, and the password must be 8 characters long.');
+        alert('Email must be a valid Noroff student email, and password must be 8 characters long.');
     }
 }
 
-// Function to log in the user
+// Handling the login
 async function loginUser(email, password) {
     const loginUrl = 'https://api.noroff.dev/api/v1/auction/auth/login';
     const userData = {
