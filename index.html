@@ -74,6 +74,17 @@
           >
             Login
           </button>
+          <button
+          onclick="window.location.href='./profile.html'"
+          type="button"
+          class="btn btn-outline-success me-2"
+          data-bs-toggle="modal"
+          data-bs-target="#loginModal"
+          data-auth="login"
+          data-visible="loggedOut"
+        >
+          Profile
+        </button>
         </div>
       </div>
     </div>
@@ -141,10 +152,10 @@
           <div class="col-auto" data-visible="loggedIn">
             <div class="d-flex align-items-center" id="footerActions">
               <a
-                href="./?view=post"
+                href="./index.html"
                 data-visible="loggedIn"
                 class="btn btn-outline-success"
-                >New Post</a
+                >Home</a
               >
             </div>
           </div>
