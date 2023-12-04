@@ -1,4 +1,3 @@
-// Handling login-form submission
 async function handleLogin(event) {
     event.preventDefault();
 
@@ -7,7 +6,6 @@ async function handleLogin(event) {
     const loginForm = document.getElementById('loginForm');
     const closeModalButton = document.querySelector('#loginModal .btn-close');
 
-    // Validating the form inputs
     if (emailInput.value.match(/^[\w\-.]+@stud\.noroff\.no$/) && passwordInput.value.length >= 8) {
         try {
             await loginUser(emailInput.value, passwordInput.value);
@@ -23,7 +21,6 @@ async function handleLogin(event) {
     }
 }
 
-// Handling the login
 async function loginUser(email, password) {
     const loginUrl = 'https://api.noroff.dev/api/v1/auction/auth/login';
     const userData = {
@@ -62,21 +59,23 @@ async function loginUser(email, password) {
     }
 }
 
-// Toggle visibility of buttons based on the presence of JWT token
 function toggleButtonVisibility() {
     const registerButton = document.getElementById('createProfileButton');
-    const loginButton = document.getElementById('loginButton');
+    const loginButton = document.getElementById('loginHeaderButton');
     const logoutButton = document.getElementById('logoutButton');
+    const profileButton = document.getElementById('profileButton');
 
     const jwtToken = localStorage.getItem('jwtToken');
 
     if (jwtToken) {
         registerButton.style.display = 'none';
         loginButton.style.display = 'none';
+        profileButton.style.display = 'inline-block';
         logoutButton.style.display = 'inline-block';
     } else {
         registerButton.style.display = 'inline-block';
         loginButton.style.display = 'inline-block';
+        profileButton.style.display = 'none';
         logoutButton.style.display = 'none';
     }
 }
