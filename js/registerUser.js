@@ -55,9 +55,6 @@ async function registerUser(name, email, password, avatar) {
 
                 console.log('Email:', email);
 
-                console.log('Registration successful! Token:', token);
-
-                updateButtonVisibility();  // Update button visibility after successful registration
             } else {
                 console.error('Registration failed. Please try again.');
                 alert('Registration failed. Please try again.');
@@ -70,9 +67,6 @@ async function registerUser(name, email, password, avatar) {
         alert('An error occurred. Please try again later.');
     }
 }
-
-// Call updateButtonVisibility on DOMContentLoaded to set initial button visibility
-document.addEventListener('DOMContentLoaded', updateButtonVisibility);
 
 const registerButton = document.getElementById('registerButton');
 registerButton.addEventListener('click', handleRegistration);

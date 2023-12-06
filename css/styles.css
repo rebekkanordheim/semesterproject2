@@ -89,13 +89,15 @@ footer {
     margin-right: 5px;
 }
 
-.cards {
+.cards,
+.user {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.product-cards {
+.product-cards,
+.user-card {
     border: 1px solid #FFFFFE;
     background-color: #fffffe77;
     border-radius: 10px;
@@ -109,7 +111,8 @@ footer {
     text-align: center;
 }
 
-.card-content {
+.card-content,
+.user-content {
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
@@ -141,4 +144,12 @@ footer {
 
 .homeInformationImage {
     max-width: fit-content;
+}
+
+.avatarImage {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
 }
