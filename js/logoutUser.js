@@ -6,8 +6,6 @@ function logoutUser() {
     setTimeout(() => {
         console.clear();
     }, 3000);
-
-    window.location.href = 'index.html';
 }
 
 function updateButtonVisibility() {

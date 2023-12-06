@@ -10,8 +10,6 @@ async function handleLogin(event) {
         try {
             const userData = await loginUser(emailInput.value, passwordInput.value);
 
-            window.location.href = 'profile.html';
-
             loginForm.style.display = 'none';
             alert('Login successful! Email: ' + emailInput.value);
             closeModalButton.click();

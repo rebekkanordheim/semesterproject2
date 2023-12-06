@@ -1,17 +1,21 @@
 nav {
-    background-color: #004643;
+    background-color: #0a1c4f;
     padding-bottom: 10px;
 }
 
 header {
-    background-color: #004643;
+    background-color: #0a1c4f;
 }
 
-h1,
-h2,
+/* h1,
+h2, */
+.headingOne,
+.headingTwo,
+.headingThree,
+.paragraph,
 .modal-title .headingOne {
     font-family: 'Agbalumo', Arial, Helvetica, sans-serif;
-    color: #FFFFFE;
+    color: #d5dee3;
     text-align: center;
     padding: 20px;
 }
@@ -19,7 +23,7 @@ h2,
 p {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-size: 19px;
-    color: #FFFFFE;
+    color: #d5dee3;
 }
 
 body {
@@ -28,22 +32,22 @@ body {
 }
 
 footer {
-    background-color: #fffffe;
+    background-color: #d5dee3;
     padding-left: 20px;
     padding-right: 20px;
 }
 
 .body-wrapper {
     margin: 0;
-    background-color: #004643;
+    background-color: #0a1c4f;
 }
 
-.pawbidslogo {
+/* .pawbidslogo {
     width: 150px;
     position: relative;
     bottom: 0;
 }
-
+ */
 .image-container {
     overflow: hidden;
     width: 100%;
@@ -75,7 +79,7 @@ footer {
     border: 2px solid #001E1D;
     border-radius: 5px;
     padding: 5px;
-    background-color: #abd1c6;
+    background-color: #1b6aa0;
     margin-left: 5px;
     margin-right: 5px;
 }
@@ -98,8 +102,8 @@ footer {
 
 .product-cards,
 .user-card {
-    border: 1px solid #FFFFFE;
-    background-color: #fffffe77;
+    border: 1px solid #d5dee3;
+    background-color: #d5dee377;
     border-radius: 10px;
     width: 300px;
     padding: 10px;
@@ -135,7 +139,7 @@ footer {
 
 .homeInformation,
 .homeInformation p {
-    background-color: #abd1c6;
+    background-color: #1b6aa0;
     color: #001E1D;
     padding: 10px;
 
