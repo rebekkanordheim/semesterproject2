@@ -42,12 +42,6 @@ footer {
     background-color: #0a1c4f;
 }
 
-/* .pawbidslogo {
-    width: 150px;
-    position: relative;
-    bottom: 0;
-}
- */
 .image-container {
     overflow: hidden;
     width: 100%;
@@ -76,7 +70,7 @@ footer {
 }
 
 .actionButtonOne {
-    border: 2px solid #001E1D;
+    border: 2px solid #D5DEE3;
     border-radius: 5px;
     padding: 5px;
     background-color: #1b6aa0;
@@ -85,12 +79,16 @@ footer {
 }
 
 .actionButtonTwo {
-    border: 2px solid #001E1D;
+    border: 2px solid #D5DEE3;
     border-radius: 5px;
     padding: 5px;
     background-color: #F9BC60;
     margin-left: 5px;
     margin-right: 5px;
+}
+.actionButtonOne,
+.actionButtonTwo {
+    color: #D5DEE3;
 }
 
 .cards,
@@ -140,7 +138,7 @@ footer {
 .homeInformation,
 .homeInformation p {
     background-color: #1b6aa0;
-    color: #001E1D;
+    color: #D5DEE3;
     padding: 10px;
 
     text-align: center;
@@ -156,4 +154,16 @@ footer {
     width: 200px;
     height: 200px;
     object-fit: cover;
+}
+
+/* #registerForm,
+#loginForm {
+    background-color: #1b6aa0;
+} */
+#createProfileButton {
+    background-color: #1b6aa0;
+    border: #D5DEE3;
+}
+#loginHeaderButton {
+    border: 2px solid #1b6aa0;
 }
