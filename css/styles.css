@@ -69,7 +69,7 @@ footer {
     z-index: 1;
 }
 
-.actionButtonOne {
+.btn-outline-success {
     border: 2px solid #D5DEE3;
     border-radius: 5px;
     padding: 5px;
@@ -78,14 +78,17 @@ footer {
     margin-right: 5px;
 }
 
-.actionButtonTwo {
+.actionButtonTwo,
+.cardButton {
     border: 2px solid #D5DEE3;
     border-radius: 5px;
     padding: 5px;
-    background-color: #F9BC60;
+    background-color: #009DD5;
     margin-left: 5px;
     margin-right: 5px;
+    margin-top: 5px;
 }
+
 .actionButtonOne,
 .actionButtonTwo {
     color: #D5DEE3;
@@ -131,7 +134,7 @@ footer {
 }
 
 .cardButton {
-    padding: 20px;
+    padding: 10px;
     font-size: 20px;
 }
 
@@ -164,6 +167,11 @@ footer {
     background-color: #1b6aa0;
     border: #D5DEE3;
 }
+
 #loginHeaderButton {
     border: 2px solid #1b6aa0;
+}
+
+.bid-form {
+    border-radius: 5px;
 }

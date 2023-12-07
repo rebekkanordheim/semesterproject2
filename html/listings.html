@@ -1,20 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Montserrat:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css">
-  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-  <script src="../node_modules/bootstrap/dist/css/bootstrap.min.css" defer></script>
-  <script src="../js/registerUser.js" defer></script>
-  <script src="../js/loginUser.js" defer></script>
-  <script src="../js/logoutUser.js" defer></script>
-    <title>Bid Wave | Beds</title>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Montserrat:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="../js/registerUser.js" defer></script>
+    <script src="../js/loginUser.js" defer></script>
+    <script src="../js/logoutUser.js" defer></script>
+    <title>Bid Wave | Listing Details</title>
 </head>
 <body>
   <header class="py-3 sticky-top shadow">
@@ -36,7 +34,7 @@
         <form class="col mb-3 mb-sm-0 me-sm-3" role="search">
           <input
             type="search"
-            class="form-control form-control-dark text-bg-dark"
+            class="form-control form-control-dark"
             placeholder="Search"
             aria-label="Search"
           />
@@ -96,15 +94,15 @@
             <div class="image-container">
                 <img  src="/images/roberto-nickson-V6G2m3D9IDI-unsplash.jpg">
                 <div class="overlay-text">
-                  <h1 class="headingOne">Beds</h1>
+                  <h1 class="headingOne">Listings</h1>
               </div>
           </div>
           <div class="card-content">
               <div class="cards">
-                <h2 class="headingTwo cards-header">Beds</h2>
+                <h2 class="headingTwo cards-header">Listings</h2>
                   <div class="product-cards">
                       <img class="card-image" src="">
-                      <button type=button class="actionButtonOne cardButton">Bid</button>
+                      <button type=button class="btn-outline-successcardButton">Bid</button>
                   </div>
               </div>
           </div>
@@ -119,7 +117,7 @@
               <a
                 href="./index.html"
                 data-visible="loggedIn"
-                class="btn btn-outline-success">Home</a>
+                class="btn actionButtonOne">Home</a>
             </div>
           </div>
         </div>
@@ -182,7 +180,7 @@
         </button>
         <button
           type="button"
-          class="btn btn-outline-success"
+          class="btn actionButtonOne"
           data-bs-toggle="modal"
           data-bs-target="#registerModal"
           data-auth="register"
@@ -238,7 +236,7 @@ data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby
         >
           Close
         </button>
-        <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#loginModal" data-auth="login" data-visible="loggedOut"
+        <button type="button" class="btn actionButtonOne" data-bs-toggle="modal" data-bs-target="#loginModal" data-auth="login" data-visible="loggedOut"
         >
           Login
         </button>
