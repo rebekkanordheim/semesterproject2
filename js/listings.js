@@ -63,24 +63,6 @@ document.addEventListener('DOMContentLoaded', function () {
 }); */
 
 // listings.js
-document.addEventListener('DOMContentLoaded', async function () {
-    try {
-        const listings = await getListings();
-        console.log(listings);
-        createListingsHTML(listings);
-
-        // Check if the user is logged in (update this logic accordingly)
-        const isLoggedIn = /* Add your logic to check if the user is logged in */ true;
-
-        // Show bid form for logged-in users
-        if (isLoggedIn) {
-            showBidForm();
-        }
-    } catch (error) {
-        console.error('Error fetching listings:', error.message);
-    }
-});
-
 // Fetching from the API
 async function getListings() {
     const response = await fetch('https://api.noroff.dev/api/v1/auction/listings?_bids=true');
@@ -126,26 +108,22 @@ function createListingsHTML(listings) {
     });
 }
 
-// Function to show bid form
-function showBidForm() {
-    const bidForms = document.querySelectorAll('.bid-form');
-    bidForms.forEach(form => {
-        form.style.display = 'block';
-    });
-}
+document.addEventListener('DOMContentLoaded', async function () {
+    try {
+        const listings = await getListings();
+        console.log(listings);
+        createListingsHTML(listings);
+        
+        const isLoggedIn = localStorage.getItem('jwtToken') !== null;
 
-// Function to add a bid (you may customize this logic)
-function addBid(listingId) {
-    const bidAmount = document.getElementById('bidAmount').value;
-    console.log(`Adding bid of ${bidAmount} for listing ${listingId}`);
+        // Select the bid form elements
+        const bidForms = document.getElementsByClassName('bid-form');
 
-    // Add your logic to handle the bid
-
-    // Show success message
-    const successMessage = document.getElementById('bidSuccessMessage');
-    successMessage.innerText = 'Your bid has been placed!';
-    // You can add additional logic to hide the message after a certain time
-    setTimeout(() => {
-        successMessage.innerText = ''; // Clear the message
-    }, 3000); // Display for 3 seconds (adjust as needed)
-}
+        // Convert the HTMLCollection to an array and iterate through
+        Array.from(bidForms).forEach(bidForm => {
+            bidForm.style.display = isLoggedIn ? 'block' : 'none';
+        });
+    } catch (error) {
+        console.error('Error fetching listings:', error.message);
+    }
+});
