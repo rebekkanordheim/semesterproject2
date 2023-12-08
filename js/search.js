@@ -1,4 +1,4 @@
-// Search function based on the title property
+/* // Search function based on the title property
 function searchListings(listings, searchTerm) {
     searchTerm = searchTerm.toLowerCase();
     return listings.filter(item => item.title.toLowerCase().includes(searchTerm));
@@ -22,3 +22,4 @@ async function handleSearch() {
     // Display the search results in the .listing-content container
     createListingsHTML(searchResults);
 }
+ */
