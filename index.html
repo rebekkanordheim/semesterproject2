@@ -17,6 +17,7 @@
     <script src="profile.js" defer></script>
     <script src="./js/listings.js" defer></script>
     <script src="./js/search.js" defer></script>
+    <script src="./js/makeListingPost.js" defer></script>
     <!-- <script src="index.js" defer></script> -->
     <title>Bid Wave | Home</title>
 </head>
@@ -133,20 +134,15 @@
           <div class="col">© 2023 Rebekka Nordheim</div>
           <div class="col-auto" data-visible="loggedIn">
             <div class="d-flex align-items-center" id="footerActions">
-              <a
-                href="./index.html"
-                data-visible="loggedIn"
-                class="btn actionButtonOne"
-                >Home</a
-              >
+              <a href="./?view=post" data-visible="loggedIn" class="btn btn-outline-success">New Post</a>
             </div>
           </div>
         </div>
       </div>
     </footer>
-    
+
+    <div id="loginSuccessMessage"></div>
     <!-- LOGIN FORM -->
-<div id="loginSuccessMessage"></div>
     <div class="modal fade" id="loginModal"
       data-bs-backdrop="static"
       data-bs-keyboard="false"
@@ -219,12 +215,11 @@
         </form>
       </div>
     </div>
-
-    <div class="modal fade" id="registerModal" 
-    data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    
+    <div class="modal fade" id="registerModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
       <div
         class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable">
-
+        
         <!-- REGISTER FORM -->
         <form class="modal-content" id="registerForm">
           <div class="modal-header">
@@ -267,6 +262,7 @@
             </button>
           </div>
         </form>
+
       </div>
     </div>
 </body>
