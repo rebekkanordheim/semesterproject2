@@ -1,47 +1,50 @@
-nav {
-    background-color: #0a1c4f;
-    padding-bottom: 10px;
-}
-
-header {
-    background-color: #0a1c4f;
-}
-
-/* h1,
-h2, */
-.headingOne,
-.headingTwo,
-.headingThree,
-.paragraph,
-.modal-title .headingOne {
-    font-family: 'Agbalumo', Arial, Helvetica, sans-serif;
-    color: #d5dee3;
-    text-align: center;
-    padding: 20px;
-}
-
-p {
-    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-    font-size: 19px;
-    color: #d5dee3;
+:root {
+    --primary-background: #0a1c4f;
+    --button-color: #009DD5;
+    --text-color: #D5DEE3;
+    --button-text: #0a1c4f;
 }
 
 body {
     margin: 0;
     padding: 0;
+    background-color: var(--primary-background);
 }
 
+/* Header and Navigation */
+nav,
+header {
+    background-color: var(--primary-background);
+    padding-bottom: 10px;
+}
+
+/* Typography */
+.headingOne,
+.headingTwo,
+.headingThree,
+.paragraph,
+.modal-title .headingOne,
+p {
+    font-family: 'Agbalumo', Arial, Helvetica, sans-serif;
+    color: var(--text-color);
+    text-align: center;
+    padding: 20px;
+}
+
+/* Footer */
 footer {
-    background-color: #d5dee3;
+    background-color: var(--text-color);
     padding-left: 20px;
     padding-right: 20px;
 }
 
+/* Page Layout */
 .body-wrapper {
     margin: 0;
-    background-color: #0a1c4f;
+    background-color: var(--primary-background);
 }
 
+/* Image Container */
 .image-container {
     overflow: hidden;
     width: 100%;
@@ -69,33 +72,41 @@ footer {
     z-index: 1;
 }
 
-.btn-outline-success {
-    border: 2px solid #D5DEE3;
+/* Buttons */
+/* .btn-outline-success,
+.actionButtonTwo, */
+.cardButton,
+#createProfileButton,
+#loginHeaderButton {
+    border: 2px solid var(--text-color);
     border-radius: 5px;
     padding: 5px;
-    background-color: #1b6aa0;
     margin-left: 5px;
     margin-right: 5px;
+    color: var(--button-text);
+}
+
+.btn-outline-success,
+#createProfileButton {
+    background-color: var(--button-color);
 }
 
 .actionButtonTwo,
 .cardButton {
-    border: 2px solid #D5DEE3;
-    border-radius: 5px;
-    padding: 5px;
-    background-color: #009DD5;
-    margin-left: 5px;
-    margin-right: 5px;
+    background-color: var(--button-color);
     margin-top: 5px;
 }
 
 .actionButtonOne,
 .actionButtonTwo {
-    color: #D5DEE3;
+    color: var(--text-color);
 }
 
+/* Card Styles */
 .cards,
-.user {
+.user,
+.listing-content,
+.user-content {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -103,8 +114,8 @@ footer {
 
 .product-cards,
 .user-card {
-    border: 1px solid #d5dee3;
-    background-color: #d5dee377;
+    border: 1px solid var(--text-color);
+    background-color: rgba(213, 222, 227, 0.47);
     border-radius: 10px;
     width: 300px;
     padding: 10px;
@@ -116,16 +127,17 @@ footer {
     text-align: center;
 }
 
-.card-content,
-.user-content {
-    padding: 20px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+.listing-cards {
+    margin-bottom: 4px;
+    padding: 3px;
+    border: 1px solid #000;
+    border-radius: 5px;
 }
 
+/* Images */
 .card-image,
-.homeInformationImage {
+.homeInformationImage,
+.avatarImage {
     height: 250px;
     width: 250px;
     padding: 5px;
@@ -133,45 +145,20 @@ footer {
     margin-bottom: 20px;
 }
 
-.cardButton {
-    padding: 10px;
-    font-size: 20px;
+/* Bid Form */
+.bid-form {
+    border-radius: 5px;
 }
 
+/* Home Information */
 .homeInformation,
 .homeInformation p {
-    background-color: #1b6aa0;
-    color: #D5DEE3;
+    background-color: var(--primary-background);
+    color: var(--text-color);
     padding: 10px;
-
     text-align: center;
 }
 
 .homeInformationImage {
     max-width: fit-content;
-}
-
-.avatarImage {
-    border-radius: 50%;
-    overflow: hidden;
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-}
-
-/* #registerForm,
-#loginForm {
-    background-color: #1b6aa0;
-} */
-#createProfileButton {
-    background-color: #1b6aa0;
-    border: #D5DEE3;
-}
-
-#loginHeaderButton {
-    border: 2px solid #1b6aa0;
-}
-
-.bid-form {
-    border-radius: 5px;
 }

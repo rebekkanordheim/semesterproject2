@@ -16,6 +16,7 @@
     <script src="./js/logoutUser.js" defer></script>
     <script src="profile.js" defer></script>
     <script src="./js/listings.js" defer></script>
+    <script src="./js/search.js" defer></script>
     <!-- <script src="index.js" defer></script> -->
     <title>Bid Wave | Home</title>
 </head>
@@ -42,6 +43,7 @@
             class="form-control form-control-dark"
             placeholder="Search"
             aria-label="Search"
+            id="searchField"
           />
         </form>
 
@@ -104,7 +106,7 @@
             <h1 class="headingOne">Auction Listings</h1>
             
             <!-- Card for listings -->
-            <div class="card-content"></div>
+            <div class="listing-content"></div>
             <div id="bidSuccessMessage"></div>
 
         <div class="homeInformation">

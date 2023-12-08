@@ -1,6 +1,6 @@
 // Creating the HTML for each listing
 function createListingsHTML(listings) {
-    const container = document.querySelector('.card-content');
+    const container = document.querySelector('.listing-content');
 
     listings.forEach(listing => {
         const listingsContainer = document.createElement('div');
