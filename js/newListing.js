@@ -1,11 +1,20 @@
-document.addEventListener('DOMContentLoaded', async function() {
+// From PretzL
+document.addEventListener('DOMContentLoaded', async function () {
     const newPostForm = document.getElementById('newPostForm');
-    newPostForm.addEventListener('submit', async function(event) {
+    newPostForm.addEventListener('submit', async function (event) {
         event.preventDefault();
 
         try {
             const formData = new FormData(newPostForm);
-            const response = await createNewPost(formData);
+            const formDataObject = {};
+
+            for (let [key, value] of formData.entries()) {
+                if (value !== '' && value != null) {
+                    formDataObject[key] = value;
+                }
+            }
+
+            const response = await createNewPost(formDataObject);
 
             console.log('New post created: ', response);
 
@@ -41,5 +50,3 @@ async function createNewPost(postData) {
         throw error;
     }
 }
-
-
