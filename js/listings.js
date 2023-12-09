@@ -1,16 +1,27 @@
-// Fetching from the API
+// Fetching from the API with timestamp to avoid caching
 async function getListings() {
-    const response = await fetch('https://api.noroff.dev/api/v1/auction/listings?_bids=true');
+    try {
+        const timestamp = new Date().getTime();
+        const apiUrl = `https://api.noroff.dev/api/v1/auction/listings?_bids=true&_timestamp=${timestamp}`;
+        const response = await fetch(apiUrl);
 
-    if (!response.ok) {
-        throw new Error('Failed to fetch listings');
+        if (!response.ok) {
+            throw new Error('Failed to fetch listings');
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error('Error fetching listings:', error.message);
+        throw error; // Rethrow the error to be caught by the caller
     }
-    return await response.json();
 }
 
 // Creating the HTML for each listing
 function createListingsHTML(listings) {
     const container = document.querySelector('.listing-content');
+    
+    // Sorting listings by title
+    listings.sort((a, b) => a.title.localeCompare(b.title));
 
     listings.forEach(listing => {
         const listingsContainer = document.createElement('div');
@@ -27,7 +38,6 @@ function createListingsHTML(listings) {
         } else {
             image.src = 'images/BidWaveLogo1.png';
         }
-
         image.alt = listing.title;
         image.classList.add('card-image', 'my-3');
         listingsContainer.append(image);
@@ -35,15 +45,14 @@ function createListingsHTML(listings) {
         const bidForm = document.createElement('form');
         bidForm.classList.add('bid-form', 'mb-3');
         bidForm.innerHTML = `
-        <div class="input-group mb-3">
-            <input type="number" class="form-control" id="bidAmount" name="bidAmount" placeholder="Enter your bid" required>
-            <button type="button" class="btn btn-success" onclick="addBid(${listing.id})">Add Bid</button>
-        </div>
+            <div class="input-group mb-3">
+                <input type="number" class="form-control" id="bidAmount" name="bidAmount" placeholder="Enter your bid" required>
+                <button type="button" class="btn btn-success" onclick="addBid(${listing.id})">Add Bid</button>
+            </div>
         `;
         listingsContainer.append(bidForm);
 
         container.append(listingsContainer);
-
     });
 }
 
@@ -62,6 +71,6 @@ document.addEventListener('DOMContentLoaded', async function () {
             bidForm.style.display = isLoggedIn ? 'block' : 'none';
         });
     } catch (error) {
-        console.error('Error fetching listings:', error.message);
+        console.error('Error in initialization:', error.message);
     }
 });
