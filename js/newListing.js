@@ -1,22 +1,21 @@
-// From PretzL
-document.addEventListener('DOMContentLoaded', async function () {
+document.addEventListener('DOMContentLoaded', function () {
     const newPostForm = document.getElementById('newPostForm');
+
     newPostForm.addEventListener('submit', async function (event) {
         event.preventDefault();
 
+        const title = document.getElementById('postTitle').value;
+        const deadline = document.getElementById('postDeadline').value;
+        const description = document.getElementById('postDescription').value;
+        const image = document.getElementById('postImage').value;
+
         try {
-            const formData = new FormData(newPostForm);
-            const formDataObject = {};
+            // Convert the image value to an array
+            const media = image ? [image] : [];
 
-            for (let [key, value] of formData.entries()) {
-                if (value !== '' && value != null) {
-                    formDataObject[key] = value;
-                }
-            }
+            const response = await createNewPost(title, description, deadline, media);
 
-            const response = await createNewPost(formDataObject);
-
-            console.log('New post created: ', response);
+            console.log('New post created:', response);
 
             newPostForm.reset();
         } catch (error) {
@@ -25,7 +24,8 @@ document.addEventListener('DOMContentLoaded', async function () {
     });
 });
 
-async function createNewPost(postData) {
+// Function to send data to the API and create a new post
+async function createNewPost(title, description, endsAt, media) {
     try {
         const apiUrl = 'https://api.noroff.dev/api/v1/auction/listings';
         const accessToken = localStorage.getItem('jwtToken');
@@ -37,7 +37,7 @@ async function createNewPost(postData) {
         const response = await fetch(apiUrl, {
             method: 'POST',
             headers: headers,
-            body: JSON.stringify(postData),
+            body: JSON.stringify({ title, description, endsAt, media }),
         });
 
         if (!response.ok) {

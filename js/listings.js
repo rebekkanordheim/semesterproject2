@@ -2,7 +2,7 @@
 async function getListings() {
     try {
         const timestamp = new Date().getTime();
-        const apiUrl = `https://api.noroff.dev/api/v1/auction/listings?_bids=true&_timestamp=${timestamp}`;
+        const apiUrl = `https://api.noroff.dev/api/v1/auction/listings?_bids=true&_timestamp=${timestamp}&sort=created`;
         const response = await fetch(apiUrl);
 
         if (!response.ok) {
@@ -12,16 +12,12 @@ async function getListings() {
         return await response.json();
     } catch (error) {
         console.error('Error fetching listings:', error.message);
-        throw error; // Rethrow the error to be caught by the caller
+        throw error;
     }
 }
 
-// Creating the HTML for each listing
 function createListingsHTML(listings) {
     const container = document.querySelector('.listing-content');
-    
-    // Sorting listings by title
-    listings.sort((a, b) => a.title.localeCompare(b.title));
 
     listings.forEach(listing => {
         const listingsContainer = document.createElement('div');
@@ -55,6 +51,7 @@ function createListingsHTML(listings) {
         container.append(listingsContainer);
     });
 }
+
 
 document.addEventListener('DOMContentLoaded', async function () {
     try {
