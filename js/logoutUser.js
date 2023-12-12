@@ -1,11 +1,15 @@
 export async function logoutUser() {
-    localStorage.removeItem('jwtToken');
-    console.log('The user has been logged out');
-    updateButtonVisibility();
+    try {
+        localStorage.removeItem('jwtToken');
+        console.log('The user has been logged out');
+        updateButtonVisibility();
 
-    setTimeout(() => {
-        console.clear();
-    }, 3000);
+        setTimeout(() => {
+            window.location.href = 'index.html';
+        }, 3000);
+    } catch (error) {
+        console.error('Error logging out:', error.message);
+    }
 }
 
 export async function updateButtonVisibility() {
