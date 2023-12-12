@@ -1,4 +1,4 @@
-async function handleLogin(event) {
+export async function handleLogin(event) {
     event.preventDefault();
 
     const emailInput = document.getElementById('loginEmail');
@@ -23,7 +23,7 @@ async function handleLogin(event) {
     }
 }
 
-async function loginUser(email, password) {
+export async function loginUser(email, password) {
     const loginUrl = 'https://api.noroff.dev/api/v1/auction/auth/login';
     const userData = {
         email: email,
@@ -62,7 +62,7 @@ async function loginUser(email, password) {
     }
 }
 
-function toggleButtonVisibility() {
+export async function toggleButtonVisibility() {
     const registerButton = document.getElementById('createProfileButton');
     const loginButton = document.getElementById('loginHeaderButton');
     const logoutButton = document.getElementById('logoutButton');

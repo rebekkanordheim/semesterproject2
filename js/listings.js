@@ -1,4 +1,4 @@
-async function getListings() {
+export async function getListings() {
     try {
         const timestamp = new Date().getTime();
         const apiUrl = `https://api.noroff.dev/api/v1/auction/listings?_bids=true&_timestamp=${timestamp}&sort=created`;
@@ -15,7 +15,7 @@ async function getListings() {
     }
 }
 
-function createListingsHTML(listings) {
+export async function createListingsHTML(listings) {
     const container = document.querySelector('.listing-content');
 
     listings.forEach(listing => {

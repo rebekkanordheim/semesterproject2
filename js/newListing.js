@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-async function createNewPost(title, description, endsAt, media) {
+export async function createNewPost(title, description, endsAt, media) {
     try {
         const apiUrl = 'https://api.noroff.dev/api/v1/auction/listings';
         const accessToken = localStorage.getItem('jwtToken');

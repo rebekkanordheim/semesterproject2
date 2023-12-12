@@ -1,3 +1,5 @@
-/* import * {handleLogin, loginUser} from './js/loginUser.js';
-import * { handleRegistration, registerUser} from './js/registerUser.js';
-import * { logoutUser } from './js/logoutUser.js'; */
+import { getListings, createListingsHTML } from '../js/listings.js';
+import { createNewPost } from '../js/newListing.js';
+import { validateRegistrationInputs, handleRegistration, registerUser } from '../js/registerUser.js';
+import { handleLogin, loginUser, toggleButtonVisibility } from '../js/loginUser.js';
+import { logoutUser, updateButtonVisibility } from './js/logoutUser.js';

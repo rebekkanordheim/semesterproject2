@@ -1,4 +1,4 @@
-function validateRegistrationInputs(name, email, password, avatar) {
+export async function validateRegistrationInputs(name, email, password, avatar) {
     return (
         name.length >= 1 &&
         password.length >= 8 &&
@@ -7,7 +7,7 @@ function validateRegistrationInputs(name, email, password, avatar) {
     );
 }
 
-async function handleRegistration(event) {
+export async function handleRegistration(event) {
     event.preventDefault();
 
     const nameInput = document.getElementById('registerName');
@@ -25,7 +25,7 @@ async function handleRegistration(event) {
     }
 }
 
-async function registerUser(name, email, password, avatar) {
+export async function registerUser(name, email, password, avatar) {
     const registerUrl = 'https://api.noroff.dev/api/v1/auction/auth/register';
 
     try {

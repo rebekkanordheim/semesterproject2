@@ -1,4 +1,4 @@
-function logoutUser() {
+export async function logoutUser() {
     localStorage.removeItem('jwtToken');
     console.log('The user has been logged out');
     updateButtonVisibility();
@@ -8,7 +8,7 @@ function logoutUser() {
     }, 3000);
 }
 
-function updateButtonVisibility() {
+export async function updateButtonVisibility() {
     const registerButton = document.getElementById('createProfileButton');
     const loginButton = document.getElementById('loginHeaderButton');
     const logoutButton = document.getElementById('logoutButton');
