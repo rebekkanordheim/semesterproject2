@@ -1,4 +1,3 @@
-// Fetching from the API with timestamp to avoid caching
 async function getListings() {
     try {
         const timestamp = new Date().getTime();
@@ -63,7 +62,6 @@ document.addEventListener('DOMContentLoaded', async function () {
 
         const bidForms = document.getElementsByClassName('bid-form');
 
-        // Convert the HTMLCollection to an array and iterate through
         Array.from(bidForms).forEach(bidForm => {
             bidForm.style.display = isLoggedIn ? 'block' : 'none';
         });

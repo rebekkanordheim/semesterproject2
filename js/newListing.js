@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const image = document.getElementById('postImage').value;
 
         try {
-            // Convert the image value to an array
             const media = image ? [image] : [];
 
             const response = await createNewPost(title, description, deadline, media);
@@ -24,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// Function to send data to the API and create a new post
 async function createNewPost(title, description, endsAt, media) {
     try {
         const apiUrl = 'https://api.noroff.dev/api/v1/auction/listings';
