@@ -6,7 +6,7 @@ export async function logoutUser() {
 
         setTimeout(() => {
             window.location.href = 'index.html';
-        }, 3000);
+        }, 1000);
     } catch (error) {
         console.error('Error logging out:', error.message);
     }
