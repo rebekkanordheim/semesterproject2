@@ -50,7 +50,7 @@ export async function loginUser(email, password) {
             toggleButtonVisibility();
             console.log('Login successful! Email:', email);
             console.log('User Data:', userData);
-            document.getElementById('loginSuccessMessage').textContent = 'Login successful! Remember to refresh the site ' + email;
+            document.getElementById('loginSuccessMessage').textContent = 'Login successful!' + email;
 
             return data.user;
         } else {

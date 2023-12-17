@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const title = document.getElementById('postTitle').value;
         const deadline = document.getElementById('postDeadline').value;
         const description = document.getElementById('postDescription').value;
-        const image = document.getElementById('postImage').value;
+        const imageInput = document.getElementById('postImage');
+        const image = imageInput.value;
 
         try {
             const media = image ? [image] : [];
@@ -16,12 +17,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
             console.log('New post created:', response);
 
+            closeNewPostForm();
+            window.location.reload();
             newPostForm.reset();
         } catch (error) {
             console.error('Error creating new post:', error.message);
         }
     });
 });
+
+function closeNewPostForm() {
+    const newPostForm = document.getElementById('newPostForm');
+    newPostForm.style.display = 'none';
+}
 
 export async function createNewPost(title, description, endsAt, media) {
     try {

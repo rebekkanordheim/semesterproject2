@@ -1,3 +1,5 @@
+import { loginUser } from './loginUser.js';
+
 export async function validateRegistrationInputs(name, email, password, avatar) {
     return (
         name.length >= 1 &&
@@ -16,10 +18,18 @@ export async function handleRegistration(event) {
     const avatarInput = document.getElementById('registerAvatar');
 
     if (validateRegistrationInputs(nameInput.value, emailInput.value, passwordInput.value, avatarInput.value)) {
-        await registerUser(nameInput.value, emailInput.value, passwordInput.value, avatarInput.value);
+        try {
+            await registerUser(nameInput.value, emailInput.value, passwordInput.value, avatarInput.value);
+            
+            // Log in the user after successful registration
+            const userData = await loginUser(emailInput.value, passwordInput.value);
 
-        const closeButton = document.querySelector('#registerModal .btn-close');
-        closeButton.click();
+            const closeButton = document.querySelector('#registerModal .btn-close');
+            closeButton.click();
+        } catch (error) {
+            console.error('Error during registration or login:', error);
+            alert('An error occurred. Please try again later.');
+        }
     } else {
         alert('Name must be at least 1 character long. Password must be 8 characters long, and email must be a valid Noroff student email, and remember an avatar image URL');
     }

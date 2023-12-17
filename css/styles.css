@@ -130,3 +130,8 @@ footer {
 .homeInformationImage {
     max-width: fit-content;
 }
+
+.form-floating {
+    border: 3px solid var(--primary-background);
+    border-radius: .375rem;
+}
