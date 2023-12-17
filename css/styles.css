@@ -2,7 +2,6 @@
     --primary-background: #0a1c4f;
     --button-color: #009DD5;
     --text-color: #D5DEE3;
-    --button-text: #0a1c4f;
 }
 
 body {
@@ -12,13 +11,19 @@ body {
 }
 
 /* Header and Navigation */
-nav, header {
+nav,
+header {
     background-color: var(--primary-background);
     padding-bottom: 10px;
 }
 
 /* Typography */
-.headingOne, .headingTwo, .headingThree, .paragraph, .modal-title .headingOne, p {
+.headingOne,
+.headingTwo,
+.headingThree,
+.paragraph,
+.modal-title,
+p {
     font-family: 'Agbalumo', Arial, Helvetica, sans-serif;
     color: var(--text-color);
     text-align: center;
@@ -68,23 +73,28 @@ footer {
 }
 
 /* Buttons */
-.cardButton, .actionButtonTwo, .cardButton {
+.cardButton,
+.actionButtonTwo,
+.cardButton,
+.btn-outline-success,
+.actionButtonTwo {
     background-color: var(--button-color);
     margin-top: 5px;
-}
-
-.btn-outline-success, .actionButtonTwo {
     color: var(--text-color);
 }
 
 /* Card Styles */
-.cards, .user, .listing-content, .user-content {
+.cards,
+.user,
+.listing-content,
+.user-content {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.product-cards, .user-card {
+.product-cards,
+.user-card {
     border: 1px solid var(--text-color);
     background-color: rgba(213, 222, 227, 0.47);
     border-radius: 10px;
@@ -106,7 +116,9 @@ footer {
 }
 
 /* Images */
-.card-image, .homeInformationImage, .avatarImage {
+.card-image,
+.homeInformationImage,
+.avatarImage {
     height: 250px;
     width: 250px;
     padding: 5px;
@@ -120,7 +132,8 @@ footer {
 }
 
 /* Home Information */
-.homeInformation, .homeInformation p {
+.homeInformation,
+.homeInformation p {
     background-color: var(--primary-background);
     color: var(--text-color);
     padding: 10px;
